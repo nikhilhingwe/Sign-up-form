@@ -1,0 +1,298 @@
+
+ form{
+    margin-top: 50px;
+     z-index: 100;
+     position: relative;
+    .try-free-btn{
+        margin-bottom: 23px;
+        text-align: center;
+        background: $Blue;
+        border-radius: 10px;
+        box-shadow: 0px 8px 0px 0px rgba(0, 0, 0, 0.164);
+        p{
+            color: rgb(230, 230, 230);
+            padding: 19px;
+            font-size: 0.94rem;
+            font-weight: 400;
+            @media screen and (max-width:600px){
+                font-size: 0.85rem;
+                max-width: 23rem;
+                margin: auto;
+            }
+            @media screen and (max-width:450px){
+                max-width: 15rem;
+                line-height: 1.6;
+            }
+            a{
+                color: $White;
+                font-weight: 600;
+                letter-spacing: 0.4px;
+            }           
+        }
+    }
+}
+
+.main-form{
+    padding: 40px 40px;
+    background-color: $White;
+    border-radius: 10px;
+    box-shadow: 0px 8px 0px 0px rgba(0, 0, 0, 0.164);
+    @media screen and (max-width:600px){
+        padding: 20px 20px;
+    }
+}
+
+.form__item{
+    position: relative;
+    margin-bottom: 6px;
+    padding-bottom: 6px;
+    input{
+        background: none;
+        padding: 15px;
+        position: relative;
+        width: 100%;
+        border-radius: 5px;
+        outline: none;
+        border: 2px solid rgba(204, 201, 201, 0.774);
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.9rem;
+        color: $DarkBlue;
+        font-weight: 500;
+        &:focus + label{
+            top: -7px;
+            left: 17px;
+            color: $Blue;
+            transform: scale(0.76);
+        }
+        &:focus{
+            border: 2px solid $Blue;
+        }
+    }
+    .form__input:not(:placeholder-shown).form__input:not(:focus) + label{
+        top: -7px;
+        left: 17px;
+        transform: scale(0.76);
+    }
+    label{
+        font-size: 0.88rem;
+        font-weight: 600;
+        background-color: $White;
+        color: gray;
+        position: absolute;
+        top: 18px;
+        left: 30px;
+        transform-origin: top left;
+        transition: 0.3s ease-in-out;
+        cursor: text;
+        @media screen and (max-width:600px){
+            font-size: 0.82rem;
+            left: 20px;
+        }
+    }
+    i{
+        font-size: 1.1rem;
+        visibility: hidden;
+        position: absolute;
+        top: 18px;
+        right: 24px;  
+    }
+    .fa-eye{
+        visibility: visible;
+        color: $DarkBlue;
+        cursor: pointer;
+    }
+    small{
+        display: flex;
+        justify-content: flex-end;
+        font-size: 0.2rem;
+        transition: 0.15s ease-in;
+        transform: scale(0);
+        margin: 2px 0px;
+        color: $Red;
+        // font-style: italic;
+        // visibility: hidden;
+        // position: absolute;
+        // top: 55px;
+        // right: 0;
+    }
+    .pass{
+        letter-spacing: 1px;
+    }
+    .randompassword{
+        z-index: 100;
+        cursor: pointer;
+        visibility: hidden;
+        font-size: 0px;
+        max-width: 45%;
+        margin: auto;
+        position: relative;
+        padding: 0px;
+        border-radius: 5px;
+        text-align: center;
+        background: $Blue;
+        color: #fff;
+        box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.664);
+        &::after{
+            position: absolute;
+            top: -5px;
+            left: 50%;
+            transform: translate(-50%) rotate(45deg);
+            content: "";
+            display: block;
+            height: 10px;
+            width: 10px;
+            background: $Blue;
+
+        }
+        @media screen and (max-width:600px){
+            max-width: 65%;
+        }
+        @media screen and (max-width:350px){
+            max-width: 70%;
+        }
+    }
+    .none{
+        animation: randomRemove 0.3s ease-in-out forwards;
+    }
+   
+    .show{
+        animation: random 0.3s ease-in-out forwards;
+    }
+}
+
+.submit{
+    width: 100%;
+    padding: 18px;
+    background: $Green;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    letter-spacing: 1.4px;
+    font-family: inherit;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: -1px -4px 1px 0px rgba(0, 0, 0, 0.151) inset;
+    transition: 0.1s ease-in;
+    position: relative;
+    overflow: hidden;
+    // &:active{
+    //     transform: scale(0.99);
+    // }
+    :hover{
+        color: $White;
+    }
+    &::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 0%;
+        background: $White;
+        opacity: 0.3;
+        // z-index: -1;
+        border-radius: 0  0 50% 50%;
+        transition: .5s ease-in-out;
+    }
+    &:focus:before{
+        height: 180%;
+    }
+    &:focus{
+        outline: 2px dashed $Green;
+        outline-offset: 0.15rem;
+    }
+}
+
+
+
+.btm-link{
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 10px 45px;
+    white-space: nowrap;
+    color: $GrayishBlue;
+    a{
+        color: $Red;
+    }
+    @media screen and (max-width:1100px){
+        padding: 10px 0px;
+        white-space: normal;
+    }
+    @media screen and (max-width:600px){
+        text-align: center; 
+        max-width: 17rem;
+        margin: auto;  
+    }
+}
+
+
+
+
+ .success{
+    i.fa-check-circle{
+        visibility: visible;
+        color: $Green;
+    }
+    input{
+        border-color: $Green;
+    }
+    label{
+        color: $Green;
+    }
+ }
+
+ .error{
+    i.fa-exclamation-circle{
+        visibility: visible;
+        color: $Red;
+    }
+    input{
+        border-color: $Red;
+    }
+    small{
+        font-size: 0.9rem;
+        transform: scale(1);
+        visibility: visible;
+        @media screen and (max-width:600px){
+            font-size: 0.7rem;
+            font-style: italic;
+        }
+        
+    }
+    label{
+        color: $Red;
+    }
+ }
+
+
+@keyframes random{
+    from{
+        visibility: hidden;
+        opacity: 0;
+        font-size: 0px;
+        padding: 0px;
+    }
+    to{
+        opacity: 1;
+        visibility: visible;
+        font-size: 17px;
+        padding: 8px;
+    }
+}
+
+@keyframes randomRemove{
+
+    from{
+        opacity: 1;
+        visibility: visible;
+        font-size: 17px;
+        padding: 8px;
+    }
+    to{
+        visibility: hidden;
+        opacity: 0;
+        font-size: 0px;
+        padding: 0px;
+    }
+}
